@@ -1,0 +1,260 @@
+@import 'global';
+@import 'vars';
+@import 'fonts';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+
+// Header start
+
+.header {
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  z-index: 5;
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+
+    @media (max-width: 849px) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__list {
+
+    li {
+      display: inline-block;
+
+      &+li {
+        margin-left: 70px;
+      }
+    }
+
+    li:first-child,
+    li:nth-child(3) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        right: -35px;
+        bottom: 7px;
+        background-color: $bg1;
+        border-radius: 50%;
+      }
+    }
+
+    li:nth-child(2) {
+      margin-right: 110px;
+    }
+
+    li:nth-child(3) {
+      margin-left: 110px;
+    }
+
+    @media (max-width: 849px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      li {
+        display: block;
+
+        &+li {
+          margin-left: 0;
+          margin-top: 40px;
+        }
+      }
+
+      li:nth-child(2) {
+        margin-right: 0;
+      }
+
+      li:nth-child(3) {
+        margin-left: 0;
+      }
+
+      li:first-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      li:nth-child(2),
+      li:nth-child(3),
+      li:last-child {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          right: 50%;
+          transform: translateX(-50%);
+          top: -20px;
+          background-color: $bg1;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $text1;
+    text-transform: uppercase;
+    transition: color .3s;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      background-color: $bg1;
+      top: 50%;
+      transform: translateY(-50%);
+      transform: scale(0);
+      transition: transform .3s;
+      display: none;
+    }
+
+    &::before {
+      left: -70px;
+    }
+
+    &::after {
+      right: -70px;
+    }
+
+    &:hover,
+    &:focus {
+      color: rgba($text1, .8);
+
+      &::before,
+      &::after {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 849px) {
+      font-size: 20px;
+
+      &::before,
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    @media (max-width: 849px) {
+      left: 70px;
+    }
+
+    @media (max-width: 399px) {
+      width: 72px;
+      height: 65px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__burger {
+    z-index: 5;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $bg1;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $bg1;
+      transition: all .3s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &.active {
+      span:first-child {
+        transform: rotate(45deg);
+      }
+
+      span:last-child {
+        transform: rotate(-45deg);
+      }
+
+      &::before,
+      &::after {
+        transform: scale(0);
+      }
+    }
+
+    @media (max-width: 849px) {
+      display: block;
+      margin-right: 30px;
+    }
+  }
+
+  @media (max-width: 849px) {
+    &__menu {
+      position: fixed;
+      overflow: auto;
+      top: 0;
+      right: -100%;
+      transform: translateX(100%);
+      background-color: $bg2;
+      width: 100%;
+      height: 100%;
+      transition: transform .5s;
+
+      &.active {
+        right: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+}
