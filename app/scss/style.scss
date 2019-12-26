@@ -466,7 +466,10 @@
 // Swiper slider
 
 .swiper {
-  padding: 80px 0;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 6%;
+  padding-bottom: 450px;
   background-color: $bg3;
   border-top: 1px solid $border1;
   border-bottom: 1px solid $border1;
@@ -474,7 +477,6 @@
     inset 0px 20px 20px -25px rgba(0, 0, 0, 0.5);
 
   &-slide {
-    border-radius: 5px;
     width: 500px;
     height: 100%;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .5);
@@ -489,6 +491,7 @@
   }
 
   &-img {
+    border-radius: 5px;
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -537,7 +540,8 @@
   }
 
   @media (max-width: 600px) {
-    padding: 50px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
