@@ -7,8 +7,15 @@ $(function () {
   wow.init();
 
   var wow = new WOW({
-    boxClass: 'footer__box li',
+    boxClass: 'footer__box',
     offset: 50,
+    mobile: false,
+  });
+  wow.init();
+
+  var wow = new WOW({
+    boxClass: 'footer__box li',
+    offset: 20,
     mobile: false,
   });
   wow.init();

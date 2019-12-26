@@ -17,16 +17,16 @@ body {
   height: 100%;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 body{
   overflow-x: hidden;
   position: relative;
   min-width: 320px;
-
-  &.lock{
-    overflow: hidden;
-  }
 }
 
 ul,
