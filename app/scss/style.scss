@@ -273,7 +273,7 @@
     bottom: -29px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 5;
+    z-index: 1;
     width: 0;
     height: 0;
     border-top: 30px solid $bg3;
@@ -473,9 +473,7 @@
   box-shadow: inset 0px -20px 20px -25px rgba(0, 0, 0, 0.5),
     inset 0px 20px 20px -25px rgba(0, 0, 0, 0.5);
 
-
   &-slide {
-    overflow: hidden;
     border-radius: 5px;
     width: 500px;
     height: 100%;
@@ -675,6 +673,7 @@
 // Form
 
 .form {
+  height: auto;
   text-align: center;
   padding: 100px 10px;
   box-shadow: inset 0px 20px 20px -20px rgba(0, 0, 0, 0.5);

@@ -1,5 +1,18 @@
 $(function () {
 
+  var wow = new WOW({
+    offset: 150, // distance to the element when triggering the animation
+    mobile: false,
+  });
+  wow.init();
+
+  var wow = new WOW({
+    boxClass: 'footer__box li',
+    offset: 50,
+    mobile: false,
+  });
+  wow.init();
+
   $('.header__burger').click(function () {
     $('.header__burger, .header__menu').toggleClass('active');
     $('html, body').toggleClass('lock');
@@ -18,5 +31,4 @@ $(function () {
       slideShadows: true,
     },
   });
-
 });
