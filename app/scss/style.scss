@@ -272,7 +272,7 @@
     bottom: -29px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
     width: 0;
     height: 0;
     border-top: 30px solid $bg3;
@@ -466,9 +466,9 @@
 
 .swiper {
   position: relative;
-  overflow: hidden;
-  padding-top: 6%;
-  padding-bottom: 450px;
+  overflow-x: hidden;
+  padding: 50px 0;
+  min-height: min-content;
   background-color: $bg3;
   border-top: 1px solid $border1;
   border-bottom: 1px solid $border1;
@@ -476,6 +476,8 @@
     inset 0px 20px 20px -25px rgba(0, 0, 0, 0.5);
 
   &-slide {
+    border-radius: 5px;
+    overflow: hidden;
     width: 500px;
     height: 100%;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .5);
@@ -490,10 +492,8 @@
   }
 
   &-img {
-    border-radius: 5px;
     width: 100%;
     height: 200px;
-    overflow: hidden;
 
     img {
       width: 100%;
